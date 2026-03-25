@@ -72,3 +72,9 @@ C:\task\Backend\Backend\Backend\obj\Debug\net8.0\ref\Backend.dll
 C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Serilog.dll
 C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\task\Backend\Backend\Backend\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\task\Backend\Backend\Backend\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+C:\task\Backend\Backend\Backend\obj\Debug\net8.0\Backend.sourcelink.json

@@ -23,6 +23,7 @@ builder.Services.AddLogging(loggingBuilder =>
         .WriteTo.Console()
         .WriteTo.File("c:/temp/treeTask.log")
         .CreateLogger();
+    loggingBuilder.AddSerilog();
 });
 builder.Services.AddMemoryCache();
 builder.Services.AddScoped<CacheActionFilter>();
