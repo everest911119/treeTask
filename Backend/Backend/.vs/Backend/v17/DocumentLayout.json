@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\task\\Backend\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\repo\\treetaskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\repo\\treetaskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\model\\bom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\model\\bom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\filter\\cachefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,16 +27,8 @@
       "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\treetask.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\repo\\treetaskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\repo\\treetaskrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\model\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\model\\part.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\model\\bom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|solutionrelative:backend\\model\\bom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A73F4E92-752E-4DA1-BBEE-866EEF1A3DB9}|Backend\\Backend.csproj|c:\\task\\backend\\backend\\backend\\data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -41,15 +45,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "GlobalExceptionMIddleware.cs",
+              "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Middleware\\GlobalExceptionMIddleware.cs",
+              "RelativeDocumentMoniker": "Backend\\Middleware\\GlobalExceptionMIddleware.cs",
+              "ToolTip": "C:\\task\\Backend\\Backend\\Backend\\Middleware\\GlobalExceptionMIddleware.cs",
+              "RelativeToolTip": "Backend\\Middleware\\GlobalExceptionMIddleware.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAMwCMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T14:16:19.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CacheFilter.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Filter\\CacheFilter.cs",
               "RelativeDocumentMoniker": "Backend\\Filter\\CacheFilter.cs",
@@ -57,12 +82,11 @@
               "RelativeToolTip": "Backend\\Filter\\CacheFilter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T15:49:59.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T15:49:59.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Part.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Model\\Part.cs",
               "RelativeDocumentMoniker": "Backend\\Model\\Part.cs",
@@ -70,12 +94,11 @@
               "RelativeToolTip": "Backend\\Model\\Part.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T05:06:46.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T05:06:46.452Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "TreeTask.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Controllers\\TreeTask.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\TreeTask.cs",
@@ -83,38 +106,37 @@
               "RelativeToolTip": "Backend\\Controllers\\TreeTask.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAewB8AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T00:40:59.641Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T00:40:59.641Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "BoM.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Model\\BoM.cs",
               "RelativeDocumentMoniker": "Backend\\Model\\BoM.cs",
               "ToolTip": "C:\\task\\Backend\\Backend\\Backend\\Model\\BoM.cs",
               "RelativeToolTip": "Backend\\Model\\BoM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T00:17:23.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TreeTaskRepo.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Repo\\TreeTaskRepo.cs",
               "RelativeDocumentMoniker": "Backend\\Repo\\TreeTaskRepo.cs",
               "ToolTip": "C:\\task\\Backend\\Backend\\Backend\\Repo\\TreeTaskRepo.cs",
               "RelativeToolTip": "Backend\\Repo\\TreeTaskRepo.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAIwFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAEUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T22:07:07.497Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "DapperContext.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Data\\DapperContext.cs",
               "RelativeDocumentMoniker": "Backend\\Data\\DapperContext.cs",
@@ -122,25 +144,24 @@
               "RelativeToolTip": "Backend\\Data\\DapperContext.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAEBVwAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T21:55:42.532Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-24T21:55:42.532Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\task\\Backend\\Backend\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Backend\\Program.cs",
               "ToolTip": "C:\\task\\Backend\\Backend\\Backend\\Program.cs",
               "RelativeToolTip": "Backend\\Program.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwCwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T21:48:22.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\TestStruct\\testquery\\ConsoleApp1\\Program.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\TestStruct\\testquery\\ConsoleApp1\\Program.cs",
@@ -148,8 +169,7 @@
               "RelativeToolTip": "..\\..\\..\\TestStruct\\testquery\\ConsoleApp1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAACQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T21:47:40.833Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-24T21:47:40.833Z"
             }
           ]
         }
