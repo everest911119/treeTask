@@ -1,6 +1,7 @@
 ﻿using Backend.Data;
 using Backend.Model;
 using Dapper;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.VisualBasic;
 using System.Collections.Concurrent;
 using System.Data;
@@ -39,7 +40,55 @@ namespace Backend.Repo
             }
         }
 
+        public BoM BuildBoMTree(List<BoMFlat> flatitems, BoM item)
+        {
+         
+            var childrenParts = flatitems.Where(f=>f.PARENT_NAME == item.name).ToList();
 
+            if (childrenParts.Count > 0)
+            {
+                item.children = new List<BoM>();
+                foreach (var part in childrenParts)
+                {
+                    var childNode = new BoM { name = part.COMPONENT_NAME };
+                    
+                    item.children.Add(BuildBoMTree(flatitems, childNode));
+                }
+            }
+            
+
+            return item;
+        }
+
+
+        public async Task<BoM> GetSubBomByCTE(BoM item)
+        {
+            try
+            {
+                using (var connection = _dapperContext.CreateConnection())
+                {
+                    var sql = @"WITH RecursiveCTE AS (
+                                SELECT id, COMPONENT_NAME, PARENT_NAME
+                                FROM bom
+                                WHERE PARENT_NAME = @Name
+                                UNION ALL
+                                SELECT b.id, b.COMPONENT_NAME, b.PARENT_NAME
+                                FROM bom b
+                                INNER JOIN RecursiveCTE r ON b.PARENT_NAME = r.COMPONENT_NAME
+                            )
+                            SELECT * FROM RecursiveCTE";
+                    var res = await connection.QueryAsync<BoMFlat>(sql, new { Name = item.name });
+                    var flatList = res.ToList();
+                    BuildBoMTree(flatList, item);
+                    return item;
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error in GetSubBomByCTE with item name: {itemName}", item.name);
+                throw ex;
+            }
+        }
 
 
         public async Task<BoM> GetSubBoM(BoM item)
@@ -91,7 +140,8 @@ namespace Backend.Repo
 
                 foreach (var item in await connection.QueryAsync<BoM>(sql))
                 {
-                    var itemResult = await GetSubBoM(item);
+                    //var itemResult = await GetSubBoM(item);
+                    var itemResult = await GetSubBomByCTE(item);
                     results.Add(itemResult);
 
                 }

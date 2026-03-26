@@ -7,4 +7,12 @@
         public List<BoM> children { get; set; }
 
     }
+
+
+    public class BoMFlat
+    {
+        public string COMPONENT_NAME { get; set; }
+        public string PARENT_NAME { get; set; }
+       
+    }
 }
