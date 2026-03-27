@@ -140,8 +140,8 @@ namespace Backend.Repo
 
                 foreach (var item in await connection.QueryAsync<BoM>(sql))
                 {
-                    //var itemResult = await GetSubBoM(item);
-                    var itemResult = await GetSubBomByCTE(item);
+                    //var itemResult = await GetSubBoM(item); approach by cache
+                    var itemResult = await GetSubBomByCTE(item); // by cte 
                     results.Add(itemResult);
 
                 }
