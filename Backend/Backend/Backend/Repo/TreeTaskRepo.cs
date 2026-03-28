@@ -1,4 +1,5 @@
 ﻿using Backend.Data;
+using Backend.Exceptions;
 using Backend.Model;
 using Dapper;
 using Microsoft.AspNetCore.Http.Features;
@@ -30,13 +31,19 @@ namespace Backend.Repo
                 {
                     var sql = "SELECT t0.COMPONENT_NAME,t1.PART_NUMBER, t1.TITLE,t0.QUANTITY,t1.type, t1.ITEM, t1.MATERIAL\r\n  FROM bom t0\r\n  left join part t1 on t0.COMPONENT_NAME = t1.NAME\r\n  where PARENT_NAME =@Name";
                     var res = await connection.QueryAsync<Part>(sql, new { Name = parentName });
+                    if (res == null || !res.Any())
+                    {
+                        logger.LogInformation("No parts found for parentName: {parentName}", parentName);
+                        throw new NotFoundException("No parts found for the given parent name.");
+                        
+                    }
                     return res.ToList();
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex)  when (ex is not  NotFoundException)
             {
                 logger.LogError(ex, "Error in GetParts with parentName: {parentName}", parentName);
-                throw ex;
+                throw new DatabaseServiceException("database error", ex.Message);
             }
         }
 
@@ -86,7 +93,7 @@ namespace Backend.Repo
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error in GetSubBomByCTE with item name: {itemName}", item.name);
-                throw ex;
+                throw new DatabaseServiceException("database error", ex.Message);
             }
         }
 
@@ -126,28 +133,37 @@ namespace Backend.Repo
             catch (Exception ex)
             {
                 logger.LogError(ex, "Error in GetSubBoM with item name: {itemName}", item.name);
-                throw ex;
+                throw new DatabaseServiceException("database error", ex.Message);
             }
         }
 
         public async Task<List<BoM>> GetBom()
 
         {
-            var results = new List<BoM>();
-            using (var connection = _dapperContext.CreateConnection())
-            {
-                var sql = "select t0.Id,t0.name from dbo.part t0\r\nwhere t0.type = 'Assembly' ";
 
-                foreach (var item in await connection.QueryAsync<BoM>(sql))
+            try
+            {
+                var results = new List<BoM>();
+                using (var connection = _dapperContext.CreateConnection())
                 {
-                    //var itemResult = await GetSubBoM(item); approach by cache
-                    var itemResult = await GetSubBomByCTE(item); // by cte 
-                    results.Add(itemResult);
+                    var sql = "select t0.Id,t0.name from dbo.part t0\r\nwhere t0.type = 'Assembly' ";
+
+                    foreach (var item in await connection.QueryAsync<BoM>(sql))
+                    {
+                        //var itemResult = await GetSubBoM(item); approach by cache
+                        var itemResult = await GetSubBomByCTE(item); // by cte 
+                        results.Add(itemResult);
+
+                    }
 
                 }
-
+                return results;
             }
-            return results;
+            catch (Exception ex)
+            {
+
+                throw new DatabaseServiceException("database error", ex.Message);
+            }
 
 
         }

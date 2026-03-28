@@ -6,7 +6,8 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Sinks;
 using Microsoft.Extensions.Caching.Memory;
-using Backend.Filter; // Add this if not already present
+using Backend.Filter;
+using Backend.Exceptions; // Add this if not already present
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,7 @@ builder.Services.AddControllers();
 var connectionString = builder.Configuration.GetConnectionString("Database");
 builder.Services.AddScoped<TreeTaskRepo>();
 builder.Services.AddSingleton<DapperContext>();
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddLogging(loggingBuilder =>
 {
@@ -38,9 +40,9 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-
+app.UseExceptionHandler(opt => { });
 app.UseAuthorization();
 app.UseCors();
 app.MapControllers();
-app.UseMiddleware<Backend.Middleware.GlobalExceptionMiddleware>();
+//app.UseMiddleware<Backend.Middleware.GlobalExceptionMiddleware>(); easy approach
 app.Run();

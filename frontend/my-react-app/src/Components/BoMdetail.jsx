@@ -1,18 +1,25 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import axios from "axios";
 import { message, Table } from "antd";
 export const BOMDetail = () => {
   const params = useParams();
   const { bomId } = params;
   const [data, setData] = useState([]);
+  const navigatorate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get(
-        `http://localhost:5016/treetask/Boms/${bomId}`,
-      );
+      const res = await axios
+        .get(`http://localhost:5016/treetask/Boms/${bomId}`)
+        .catch((err) => {
+          if (err.response && err.response.status === 404) {
+            message.error(`BOM with ID ${bomId} not found`);
+            navigatorate("/"); // Redirect to home page or a not-found
+          }
+        });
+      console.log(res);
       if (res.status !== 200) {
-        message.error("Failed to fetch BOM details");
+        message.error(`Failed to fetch BOM details for ID: ${bomId}`);
       }
 
       setData(res.data);

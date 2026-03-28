@@ -17,7 +17,11 @@ function App() {
     <>
       <BrowserRouter>
         <Layout>
-          <Sider width={200} className="site-layout-background">
+          <Sider
+            width={250}
+            className="site-layout-background"
+            collapsible={true}
+          >
             <TreeNav />
           </Sider>
           <Content>
