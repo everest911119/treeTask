@@ -30,7 +30,7 @@
         public void OnActionExecuted(ActionExecutedContext context)
         {
           
-            if (context.Result is ObjectResult objectResult)
+            if (context.Result is ObjectResult objectResult && context.HttpContext.Response.StatusCode==200)
             {
                 string cacheKey = context.HttpContext.Request.Path.ToString();
                 _memoryCache.Set(cacheKey, objectResult, TimeSpan.FromSeconds(_durationInSeconds));
