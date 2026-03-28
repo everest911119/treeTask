@@ -1,13 +1,14 @@
 using Backend.Data;
+using Backend.Exceptions; // Add this if not already present
+using Backend.Filter;
 using Backend.Repo;
+using HealthChecks.UI.Client;
 using Microsoft.Data.SqlClient;
-using System.Data;
+using Microsoft.Extensions.Caching.Memory;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks;
-using Microsoft.Extensions.Caching.Memory;
-using Backend.Filter;
-using Backend.Exceptions; // Add this if not already present
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,7 +36,7 @@ builder.Services.AddCors(c =>
     c.AddDefaultPolicy(builder => builder.WithOrigins(urls)
                             .AllowAnyMethod().AllowAnyHeader().AllowCredentials());
 });
-
+builder.Services.AddHealthChecks().AddSqlServer(connectionString, name: "Database", failureStatus: Microsoft.Extensions.Diagnostics.HealthChecks.HealthStatus.Unhealthy);
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 
@@ -44,5 +45,9 @@ app.UseExceptionHandler(opt => { });
 app.UseAuthorization();
 app.UseCors();
 app.MapControllers();
+app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 //app.UseMiddleware<Backend.Middleware.GlobalExceptionMiddleware>(); easy approach
 app.Run();
