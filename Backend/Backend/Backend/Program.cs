@@ -41,10 +41,11 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-app.UseExceptionHandler(opt => { });
 app.UseAuthorization();
 app.UseCors();
 app.MapControllers();
+app.UseExceptionHandler(opt => { });
+
 app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
